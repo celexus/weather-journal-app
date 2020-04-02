@@ -28,7 +28,6 @@ const server = app.listen(port, listening);
 
 // Callback to debug
 function listening(){
-    // console.log(server);
     console.log(`running on localhost: ${port}`);
 };
 
@@ -37,8 +36,8 @@ app.get('/all', getData);
 
 // Callback function to complete GET '/all'
 function getData (request, response){
-    response.send(projectData);
     console.log(projectData);
+    response.send(projectData);
 }
 
 // Post Route

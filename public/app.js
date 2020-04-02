@@ -2,6 +2,10 @@
 let baseUrl = 'http://api.openweathermap.org/data/2.5/forecast?zip=';
 const apiKey = '&APPID=1dfbe50ce0c68118f81a95ab4b0d0071';
 
+let d = new Date();
+let m = d.getMonth() + 1;
+let newDate = m + '.' + d.getDate() + '.' + d.getFullYear();
+
 // Event listener to add function to existing HTML DOM element
 document.getElementById('generate').addEventListener('click', performAction);
 
@@ -13,11 +17,9 @@ function performAction(e){
     getWeatherData(baseUrl, zipCode, apiKey,)
         .then(function(data){
             // Add data
-            postData('/add',{temp:data.list[0].main.temp, date:data.list[0].dt, content:feelings});
+            postData('/add',{temp:data.list[0].main.temp, date:newDate, content:feelings});
+            updateUI();
         })
-        .then(
-            updateUI()
-        )
 }
 
 /* Function to GET Web API Data*/
