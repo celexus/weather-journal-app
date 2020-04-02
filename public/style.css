@@ -7,6 +7,8 @@ body{
     display: grid;
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
+    grid-template-areas: "top" "left" "right" "bottom";
+    grid-template-columns: 50%;
     height:100vh;
     background: #e5ece3;
     color: #2c1934;
@@ -17,11 +19,20 @@ body{
 }
 
 .holder{
-
+    display: flex;
 }
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    grid-area: bottom;
+}
+
+.zip {
+    grid-area: left;
+}
+
+.feel {
+    grid-area: right;
 }
 
 #entryHolder{
@@ -41,7 +52,7 @@ body{
 }
 
 .headline {
-
+    grid-area: top;
 }
 .title{
 

@@ -45,9 +45,11 @@ function getData (request, response){
 app.post('/add', callBack);
 
 function callBack(request, response){
-    projectData.temp = req.body.temp;
-    projectData.date = req.body.date;
-    projectData.content = req.body.content;
-    res.send(projectData);
+
+    projectData.temp = request.body.temp;
+    projectData.date= request.body.date;
+    projectData.content= request.body.content;
+
+    response.send(projectData);
     console.log(projectData);
 }
